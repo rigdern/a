@@ -155,6 +155,9 @@
         parse-article
         render-article)))
 
+(defn render-nojekyll []
+  "")
+
 (defn render-version-txt []
   (str 
    (git-head-sha)
@@ -177,7 +180,13 @@
 
 (defn get-all-pages [dir-path]
   (merge (get-pages dir-path)
-         {"version.txt" render-version-txt}))
+         ;; By default, GitHub Pages assumes you're using Jekyll and does some special
+         ;; processing. As far as I know, we're not currently affected by this. To
+         ;; avoid gotchas in the future, create a .nojekyll file to disable this
+         ;; special processing. For more details see:
+         ;; https://github.blog/2009-12-29-bypassing-jekyll-on-github-pages/
+         {".nojekyll" render-nojekyll
+          "version.txt" render-version-txt}))
 
 (defn not-found-response [req]
   (ring-resp/content-type (ring-resp/not-found (str "Not found: " req)) "text/plain"))
