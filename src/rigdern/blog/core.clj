@@ -97,17 +97,24 @@
     "  text-decoration: none;"
     "}"
 
-    ".title-text:hover {",
+    ".title-text:hover {"
     "  text-decoration: underline;"
     "}"
     
-    ".content {",
+    ".content {"
     "  max-width: 700px;"
     "  margin-left: auto;"
     "  margin-right: auto;"
     "  padding-left: 10px;"
     "  padding-right: 10px;"
-    "}"]))
+    "}"
+
+    ".comments-link {"
+    "  display: inline-block;"
+    "  margin-top: 30px;"
+    "  margin-bottom: 18px;"
+    "}"
+    ]))
 
 (defn render-page [title body]
   (str
@@ -138,7 +145,10 @@
       [:div {:class "content"}
        [:h1 (:title meta)]
        dates-el
-       (h/raw (markdown->html (:content article)))]])))
+       (h/raw (markdown->html (:content article)))
+       (if (:comments-id meta)
+         [:a {:class "comments-link" :href (str "https://github.com/rigdern/comments/issues/" (:comments-id meta))}
+          "View Comments"])]])))
 
 (defn parse-article [content]
   (when (not= 0 (s/index-of content "```")) (throw (Exception. "Article must begin with ```")))
