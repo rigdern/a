@@ -1,0 +1,9 @@
+.clj-kondo/
+.cpcache/
+.lsp/
+.nrepl-port
+.obsidian/
+_gh-pages/
+*~
+\#*
+.#*
