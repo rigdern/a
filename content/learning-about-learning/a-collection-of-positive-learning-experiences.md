@@ -3,11 +3,11 @@
  :published "2022-02-16"}
 ```
 
-Below are some examples I've come across of positive learning experiences. I am collecting them because I enjoy reading them and they serve as inspiration when thinking about how to go about creating learning experiences.
+Below are some examples I've come across of positive learning experiences. I am collecting them because I enjoy reading them and they serve as inspiration when I'm thinking about how to go about creating great learning experiences.
 
 ## Supporting the children's interests
 
-A child follows his curiosity and secretly conducts an electricity experiment during English class. When he's caught, his teacher supports his interest rather than punishing him. She allocates class time so he and other children can have time to explore their interests.
+A child follows his curiosity and secretly conducts an electricity experiment during English class. When he's caught, his teacher supports his interest rather than punishing him. She allocates class time so he and the other children can have time to explore their interests.
 
 > But in 4th grade the teacher, Miss Mary Quirk, was quite different from the start. And there was something very different in her classroom. There was an old dining table towards the back on the right hand side that was completely covered with various kinds of junk: tools, wires, gears, batteries, and books.
 > 
