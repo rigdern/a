@@ -192,17 +192,23 @@
          :body (page-handler)}
         (not-found-response (:uri request))))))
 
-(defn delete-directory [^java.io.File file]
+(defn delete-directory [^java.io.File file file-filter]
   (when (.isDirectory file)
-    (doseq [file-in-dir (.listFiles file)]
-      (delete-directory file-in-dir)))
+    (doseq [file-in-dir (.listFiles file file-filter)]
+      (delete-directory file-in-dir file-filter)))
   (println (str "Deleting " (.getAbsolutePath file)))
   (io/delete-file file))
 
-(defn empty-directory [^java.io.File directory]
+(defn empty-directory [^java.io.File directory file-filter]
   (when (.isDirectory directory)
-    (doseq [file-in-dir (.listFiles directory)]
-      (delete-directory file-in-dir))))
+    (doseq [file-in-dir (.listFiles directory file-filter)]
+      (delete-directory file-in-dir file-filter))))
+
+(def skip-git-directory-file-filter
+  (reify
+    java.io.FileFilter
+    (accept [this file]
+      (not= ".git" (.getName file)))))
 
 (defn write-pages [pages out-dir-file]
   (doseq [[page-path render-page] pages]
@@ -250,7 +256,7 @@
    
    (let [gh-pages-dir-file (.toFile gh-pages-dir)]
      (.mkdir gh-pages-dir-file) ; Ensure the directory exists
-     (empty-directory gh-pages-dir-file)
+     (empty-directory gh-pages-dir-file skip-git-directory-file-filter)
      (write-pages (get-all-pages content-dir) gh-pages-dir-file))))
 
 (defn -main []
