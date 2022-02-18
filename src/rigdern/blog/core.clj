@@ -114,6 +114,15 @@
     "  margin-top: 30px;"
     "  margin-bottom: 18px;"
     "}"
+
+    "blockquote {"
+    "  margin-left: 0;"
+    "  margin-right: 0;"
+    "  padding-left: 10px;"
+    "  padding-right: 10px;"
+    "  border-left: 5px solid rgb(208, 215, 222);"
+    "  color: rgb(87, 96, 106);"
+    "}"
     ]))
 
 (defn render-page [title body]

@@ -2,11 +2,11 @@
 
 ## Cheatsheet for running the site
 
-- `cider-jack-in`
-- `cider-load-buffer`
+- `cider-jack-in` (`C-c M-j`)
+- `cider-load-buffer` (`C-c C-k`)
 - `C-c C-c`: send defn to REPL
 - `C-c C-e`: send last expression to REPL
-- `cider-quit`
+- `cider-quit` (`C-c C-q`)
 
 The bottom of `core.clj` contains some useful forms for evaling:
 - **Development.** Start a dev server. Point your browser at it. Refresh the browser to see the latest content.
