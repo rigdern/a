@@ -1,4 +1,4 @@
- (ns rigdern.blog.core
+(ns rigdern.blog.core
   (:require
    [clojure.java.io :as io]
    [clojure.java.shell :as shell]
