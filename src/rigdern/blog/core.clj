@@ -188,11 +188,14 @@
    enables you to generate the appropriate content for that request."
   [dir-path]
   (let [pages (reduce (fn [acc file]
-                        (when (.isFile file)
+                        (if-not (.isFile file)
+                          acc
                           (let [request-path (.relativize dir-path (.toPath file))]
                             (cond
                               (= (file-extension request-path) "md")
-                              (assoc acc (.toString (set-file-extension request-path "html")) (article-handler (.getAbsolutePath file)))))))
+                              (assoc acc (.toString (set-file-extension request-path "html")) (article-handler (.getAbsolutePath file)))
+
+                              :else acc))))
                       {}
                       (file-seq (.toFile dir-path)))]
     pages))
@@ -299,7 +302,7 @@
   (shutdown-agents))
 
 (comment
-  
+
   ;; Run:
   ;;   - to (re)start the dev server.
   ;;   - after adding/removing files from the content dir.
