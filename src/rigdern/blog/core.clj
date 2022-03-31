@@ -43,6 +43,33 @@
                  "")
                (str extensionless-file-name "." extension))))
 
+(def skip-git-directory-file-filter
+  (reify
+    java.io.FileFilter
+    (accept [this file]
+      (not= ".git" (.getName file)))))
+
+(def skip-dot-files-file-filter
+  (reify
+    java.io.FileFilter
+    (accept [this file]
+      (not= \. (.charAt (.getName file) 0)))))
+
+(defn filtered-file-seq [^java.io.File directory file-filter]
+  (tree-seq
+   (fn [^java.io.File file] (.isDirectory file))
+   (fn [^java.io.File directory] (.listFiles directory file-filter))
+   directory))
+
+(defn map-with-unique-keys [key-value-pairs]
+  (reduce
+   (fn [map [key value]]
+     (when (contains? map key)
+       (throw (Exception. (str "map-with-unique-keys: `map` already contains `key`: " key))))
+     (assoc map key value))
+   {}
+   key-value-pairs))
+
 (defn git-has-local-changes? []
   (not= 0 (:exit (shell/sh "git" "diff-index" "--quiet" "HEAD"))))
 
@@ -168,6 +195,9 @@
       {:meta (read-string edn-string)
        :content body})))
 
+(defn file-handler [file]
+  (fn [] file))
+
 (defn article-handler [path]
   (fn []
     (-> (slurp path)
@@ -183,9 +213,10 @@
    (when (git-has-local-changes?) " with local changes")))
 
 (defn get-pages
-  "Recursively walks `dir-path` returning a map of request paths to functions
-   which return the content for that path. Given the path of a request, this map
-   enables you to generate the appropriate content for that request."
+  "Recursively walks `dir-path` returning a vector mapping request paths to functions
+   which return the content for that path. Content may be a string or a java.io.File.
+   Given the path of a request, this mapping enables you to generate the appropriate
+   content for that request."
   [dir-path]
   (let [pages (reduce (fn [acc file]
                         (if-not (.isFile file)
@@ -193,22 +224,28 @@
                           (let [request-path (.relativize dir-path (.toPath file))]
                             (cond
                               (= (file-extension request-path) "md")
-                              (assoc acc (.toString (set-file-extension request-path "html")) (article-handler (.getAbsolutePath file)))
+                              (conj acc
+                                    [(.toString (set-file-extension request-path "html"))
+                                     (article-handler (.getAbsolutePath file))])
 
-                              :else acc))))
-                      {}
-                      (file-seq (.toFile dir-path)))]
+                              :else
+                              (conj acc
+                                    [(.toString request-path)
+                                     (file-handler file)])))))
+                      []
+                      (filtered-file-seq (.toFile dir-path) skip-dot-files-file-filter))]
     pages))
 
 (defn get-all-pages [dir-path]
-  (merge (get-pages dir-path)
+  (map-with-unique-keys
+   (conj (get-pages dir-path)
          ;; By default, GitHub Pages assumes you're using Jekyll and does some special
          ;; processing. As far as I know, we're not currently affected by this. To
          ;; avoid gotchas in the future, create a .nojekyll file to disable this
          ;; special processing. For more details see:
          ;; https://github.blog/2009-12-29-bypassing-jekyll-on-github-pages/
-         {".nojekyll" render-nojekyll
-          "version.txt" render-version-txt}))
+         [".nojekyll" render-nojekyll]
+         ["version.txt" render-version-txt])))
 
 (defn not-found-response [req]
   (ring-resp/content-type (ring-resp/not-found (str "Not found: " req)) "text/plain"))
@@ -235,18 +272,16 @@
     (doseq [file-in-dir (.listFiles directory file-filter)]
       (delete-directory file-in-dir file-filter))))
 
-(def skip-git-directory-file-filter
-  (reify
-    java.io.FileFilter
-    (accept [this file]
-      (not= ".git" (.getName file)))))
-
 (defn write-pages [pages out-dir-file]
   (doseq [[page-path render-page] pages]
-    (let [page-file (io/file out-dir-file page-path)]
+    (let [page-file (io/file out-dir-file page-path)
+          content (render-page)]
       (.mkdirs (.getParentFile page-file))
       (println (str "Writing " (.getAbsolutePath page-file)))
-      (spit page-file (render-page)))))
+      (cond
+        (string? content) (spit page-file (render-page))
+        (instance? java.io.File content) (io/copy content page-file)
+        :else (throw (Exception. (str "write-pages: Unexpected type of content: " (type content))))))))
 
 ;; Public
 ;;
