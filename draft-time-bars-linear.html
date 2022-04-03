@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html><head><title>Linear Layout - Adam Comella</title><meta charset="UTF-8" /><meta content="width=device-width, initial-scale=1.0" name="viewport" /><style>html,
+body {
+  margin: 0;
+  padding: 0;
+}
+body {
+  font-family: "Computer Modern", Georgia, "Times New Roman", Times, serif;
+  font-size: 18px;
+}
+.title {
+  background-color: #0f52ba;
+  padding: 10px;
+  margin-bottom: 5px;
+  color: white;
+}
+.title a {
+  text-decoration: none;
+  color: white;
+}
+.title a:hover {
+  text-decoration: underline;
+}
+.title-text {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 910px;
+  font-size: 20px;
+}
+.author-text {
+  box-sizing: border-box;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 10px;
+  max-width: 910px;
+  font-size: 15px;
+}
+.content-and-sidenotes {
+  position: relative;
+  max-width: 910px;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 10px;
+  padding-right: 10px;
+}
+.content {
+  max-width: 640px;
+}
+img {
+  max-width: 640px;
+}
+.sidenote {
+  position: absolute;
+  left: 660px;
+  width: 250px;
+  font-size: 15px;
+  color: rgb(153, 153, 153);
+}
+.comments-link {
+  display: inline-block;
+  margin-top: 30px;
+  margin-bottom: 18px;
+}
+blockquote {
+  margin-left: 0;
+  margin-right: 0;
+  padding-left: 10px;
+  padding-right: 10px;
+  border-left: 5px solid rgb(208, 215, 222);
+  color: rgb(87, 96, 106);
+}</style></head><body><div><div class="title"><a class="title-text" href="./index.html">Adam Comella</a></div><div class="content-and-sidenotes"><div class="content"><h1>Linear Layout</h1><div>Published: 2022-04-02</div><style>
+.collage {
+  max-width: 204px;
+  border: 1px solid black;
+  padding: 2px;
+  margin-bottom: 5px;
+  margin-right: 3px;
+}
+</style>
+<p>Why doesn't any major flight search website that I'm aware of display their results using time bar graphs?</p>
+<p>Here's an example of what flight search results typically look like:</p>
+<p style="text-align: center">
+  <img src="./why-dont-flight-search-results-use-time-bars/google-flights.png"/><span class="sidenote" style="text-align: start;">Screenshot of <a href="https://www.google.com/travel/flights">Google Flights</a> from March 2022.</span>
+</p>
+<p>At a glance, I cannot glean much about the tradeoffs between the options. In order to make a comparison, I have to focus on the text of each result in detail.</p>
+<p>Compare the experience with these results which are presented using time bars:</p>
+<p><img src="./why-dont-flight-search-results-use-time-bars/hipmunk.jpeg"/><span class="sidenote" style="text-align: start;">
+Hipmunk user interface from 2010. <a href="https://www.flickr.com/photos/8127753@N06/5055051593">Screenshot</a> by <a href="https://www.flickr.com/photos/y2bk/">Brian Kelly</a>, used under <a href="https://creativecommons.org/licenses/by/2.0/">CC BY 2.0</a>. Cropped from original.
+</span></p>
+<p><span class="sidenote">For an insightful analysis of time bars and other user interface elements in the context of train schedules see <a href="http://worrydream.com/MagicInk/#case_study_train_schedules">&quot;Case study: Train schedules&quot;</a> from <a href="http://worrydream.com/MagicInk/">Magic Ink by Bret Victor (2006)</a>.</span>At a glance, I can make various comparisons between options:</p>
+<ul>
+<li>Which flight takes off earlier?</li>
+<li>Which flight lands later?</li>
+<li>Which flight is longer?</li>
+<li>Which flight spends more time in layovers?</li>
+</ul>
+<p>Hipmunk's UI is also denser. Compare how much vertical space a time bar occupies on Hipmunk compared to that of a textual result on Google Flights. The more information you can quickly comprehend from a user interface without having to scroll it, the better.</p>
+<p>Which user interface do you prefer? I have a strong preference for the time bar visualization due to how much information it conveys at a glance.</p>
+<p>Let's take a look at various flight search services to see what kinds of interfaces they use for communicating their results.</p>
+<h2 id="examples-using-time-bar-representation">Examples using time bar representation</h2>
+<p>First we'll take a look at services that use time bars. As we'll see, none of the major flight search engines appear here.</p>
+<h3 id="flight-penguin">Flight Penguin</h3>
+<p style="text-align: center">
+  <img src="./why-dont-flight-search-results-use-time-bars/flight-penguin.png"/><span class="sidenote" style="text-align: start;">Screenshot of <a href="https://flightpenguin.com/">Flight Penguin</a> from March 2022.</span>
+</p>
+<p>Flight Penguin is a Chrome extension that does flight search. It's built by some of the same people who built Hipmunk. It seems to be fairly recent — the press articles I saw announcing Flight Penguin were from April 2021.</p>
+<h3 id="ita-matrix-by-google">ITA Matrix by Google</h3>
+<p style="text-align: center">
+  <img src="./why-dont-flight-search-results-use-time-bars/ita-matrix.png"/><span class="sidenote" style="text-align: start;">Screenshot of <a href="https://matrix.itasoftware.com/search">ITA Matrix by Google</a> from March 2022.</span>
+</p>
+<p>ITA offers flight search technology that is used by many travel companies and airlines. ITA Matrix is intended as a demo of this technology. I think Matrix's intention of being a demo manifests in at least a couple of ways.</p>
+<p>You cannot buy flights through ITA Matrix — once you've selected your flights, it provides the information you need to purchase the flights elsewhere (e.g. from the airline or a travel agent).</p>
+<p>ITA Matrix depends on some internal infrastructure that is deprecated and planned for retirement. To keep ITA Matrix available, a group of volunteers at Google have been using their 20% time to rewrite it on top of newer infrastructure*.<span class="sidenote">* See <a href="https://www.flyertalk.com/forum/33719083-post2040.html">this FlyerTalk Forum post</a>.</span></p>
+<p>I'm grateful that ITA Matrix continues to be maintained.</p>
+<h3 id="hipmunk">Hipmunk</h3>
+<p><img src="./why-dont-flight-search-results-use-time-bars/hipmunk.jpeg"/><span class="sidenote" style="text-align: start;">
+Hipmunk user interface from 2010. <a href="https://www.flickr.com/photos/8127753@N06/5055051593">Screenshot</a> by <a href="https://www.flickr.com/photos/y2bk/">Brian Kelly</a>, used under <a href="https://creativecommons.org/licenses/by/2.0/">CC BY 2.0</a>. Cropped from original.
+</span></p>
+<p>Unfortunately Hipmunk is no longer available for use — it was retired on January 23, 2020*.<span class="sidenote">* See <a href="https://www.concur.com/en-us/concur-hipmunk-faq">Concur Hipmunk FAQs</a>.</span></p>
+<h2 id="examples-using-textual-representation">Examples using textual representation</h2>
+<p>Now we'll look at how a variety of popular flight search engines display their results. The results are primarily conveyed using text.</p>
+<h3 id="agoda">Agoda</h3>
+<p style="text-align: center">
+  <img src="./why-dont-flight-search-results-use-time-bars/agoda.png"/><span class="sidenote" style="text-align: start;">Screenshot of <a href="https://www.agoda.com/#flights">Agoda</a> from March 2022.</span>
+</p>
+<p>Like Skiplagged, this UI conveys the number of layovers visually but other details require studying the text. For example, at a glance I cannot tell which flight lands earliest.</p>
+<h3 id="bookingcom">Booking.com</h3>
+<p style="text-align: center">
+  <img src="./why-dont-flight-search-results-use-time-bars/booking-com.png"/><span class="sidenote" style="text-align: start;">Screenshot of <a href="https://www.booking.com/flights/index.en.html">Booking.com</a> from March 2022.</span>
+</p>
+<h3 id="cheapoair">CheapOair</h3>
+<p style="text-align: center">
+  <img src="./why-dont-flight-search-results-use-time-bars/cheapoair.png"/><span class="sidenote" style="text-align: start;">Screenshot of <a href="https://www.cheapoair.com/flights/">CheapOair</a> from March 2022.</span>
+</p>
+<h3 id="expedia">Expedia</h3>
+<p style="text-align: center">
+  <img src="./why-dont-flight-search-results-use-time-bars/expedia.png"/><span class="sidenote" style="text-align: start;">Screenshot of <a href="https://www.expedia.com/Flights">Expedia</a> from March 2022.</span>
+</p>
+<h3 id="google-flights">Google Flights</h3>
+<p style="text-align: center">
+  <img src="./why-dont-flight-search-results-use-time-bars/google-flights.png"/><span class="sidenote" style="text-align: start;">Screenshot of <a href="https://www.google.com/travel/flights">Google Flights</a> from March 2022.</span>
+</p>
+<h3 id="kayak">Kayak</h3>
+<p style="text-align: center">
+  <img src="./why-dont-flight-search-results-use-time-bars/kayak.png"/><span class="sidenote" style="text-align: start;">Screenshot of <a href="https://www.kayak.com/flights">Kayak</a> from March 2022.</span>
+</p>
+<h3 id="momondo">Momondo</h3>
+<p style="text-align: center">
+  <img src="./why-dont-flight-search-results-use-time-bars/momondo.png"/><span class="sidenote" style="text-align: start;">Screenshot of <a href="https://www.momondo.com/">Momondo</a> from March 2022.</span>
+</p>
+<h3 id="priceline">Priceline</h3>
+<p style="text-align: center">
+  <img src="./why-dont-flight-search-results-use-time-bars/priceline.png"/><span class="sidenote" style="text-align: start;">Screenshot of <a href="https://www.priceline.com/flights/">Priceline</a> from March 2022.</span>
+</p>
+<h3 id="skiplagged">Skiplagged</h3>
+<p style="text-align: center">
+  <img src="./why-dont-flight-search-results-use-time-bars/skiplagged.png"/><span class="sidenote" style="text-align: start;">Screenshot of <a href="https://skiplagged.com/">Skiplagged</a> from March 2022.</span>
+</p>
+<p>Like Agoda, this UI conveys the number of layovers visually but other details require studying the text. For example, at a glance I cannot tell which flight lands earliest.</p>
+<h3 id="tripadvisor">TripAdvisor</h3>
+<p style="text-align: center">
+  <img src="./why-dont-flight-search-results-use-time-bars/tripadvisor.png"/><span class="sidenote" style="text-align: start;">Screenshot of <a href="https://www.tripadvisor.com/CheapFlightsHome">TripAdvisor</a> from March 2022.</span>
+</p>
+<h2 id="speculating-on-the-rarity-of-time-bars">Speculating on the rarity of time bars</h2>
+<p>We've seen that none of the major flight search engines use time bars in their flight results. Why is this? I don't know but here are some possible explanations for why one wouldn't use time bars:</p>
+<ul>
+<li>They don't know about time bars.</li>
+<li>It would bring the company negligible benefit. Perhaps after implementing time bars, the company wouldn't observe changes in any metric they care about. Perhaps the engine is so good at recommending flights that users don't spend much time comparing them — they pick among the top two or three flights.</li>
+<li>It would harm the company. Perhaps it would change user behavior in undesirable ways.</li>
+<li>It would hinder the user. Perhaps the time bar interface has disadvantages that I'm overlooking. Maybe users would be confused by time bars due to a lack of familiarity. Maybe there are disadvantages even for users that are familiar with them.</li>
+</ul>
+<p>What do you think? Do you prefer the time bar representation? Why aren't they more commmon?</p>
+<a class="comments-link" href="https://github.com/rigdern/comments/issues/2">View Comments</a></div></div></div></body></html>
