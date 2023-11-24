@@ -1,0 +1,350 @@
+<!DOCTYPE html>
+<html><head><title>Learning Design Insights from Outer Wilds: Curiosity, Autonomy, Growth Mindset, and Intrinsic Motivation - Learning About Learning</title><meta charset="UTF-8" /><meta content="width=device-width, initial-scale=1.0" name="viewport" /><style>html,
+body {
+  margin: 0;
+  padding: 0;
+}
+body {
+  font-family: "Computer Modern", Georgia, "Times New Roman", Times, serif;
+  font-size: 18px;
+}
+.content-and-sidenotes {
+  line-height: 1.45;
+}
+sup {
+  line-height: 0;
+}
+.footnotes li:target, sup:target {
+  background-color: #eaf3ff;
+}
+.title {
+  background-color: #0f52ba;
+  padding: 10px;
+  margin-bottom: 5px;
+  color: white;
+}
+.title a {
+  text-decoration: none;
+  color: white;
+}
+.title a:hover {
+  text-decoration: underline;
+}
+.title-text {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 910px;
+  font-size: 20px;
+}
+.author-text {
+  box-sizing: border-box;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 10px;
+  max-width: 910px;
+  font-size: 15px;
+}
+.content-and-sidenotes {
+  position: relative;
+  max-width: 910px;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 10px;
+  padding-right: 10px;
+}
+.content {
+  max-width: 640px;
+}
+img {
+  max-width: 640px;
+  height: auto;
+}
+.sidenote {
+  position: absolute;
+  left: 660px;
+  width: 250px;
+  font-size: 15px;
+  color: rgb(153, 153, 153);
+}
+.comments-link {
+  display: inline-block;
+  margin-top: 30px;
+  margin-bottom: 18px;
+}
+blockquote {
+  margin-left: 0;
+  margin-right: 0;
+  padding-left: 10px;
+  padding-right: 10px;
+  border-left: 5px solid rgb(208, 215, 222);
+  color: rgb(87, 96, 106);
+}
+figure {
+  margin-left: 0;
+  margin-right: 0;
+  margin-top: 1em;
+  margin-bottom: 1em;
+}
+figcaption {
+  color: rgb(128, 128, 128);
+  font-size: 0.9em;
+  margin-left: 10px;
+  margin-right: 10px;</style></head><body><div><div class="title"><a class="title-text" href="/learning-about-learning/index.html">Learning About Learning</a><div class="author-text">by <a href="/index.html">Adam Comella</a></div></div><div class="content-and-sidenotes"><div class="content"><h1 style="margin-block-end: 0;">Learning Design Insights from Outer Wilds</h1><h2 style="color: rgb(128, 128, 128); font-weight: normal; font-size: 1.2em; margin-block-start: 0;">Curiosity, Autonomy, Growth Mindset, and Intrinsic Motivation</h2><div>Published: 2023-11-23</div><figure>
+	<a href="./images/flying.png" target="_blank">
+		<img src="./images/flying.png" width="640" height="360">
+	</a>
+	<figcaption>
+		Flying a spaceship near the surface of a planet in <i>Outer Wilds</i>.
+	</figcaption>
+</figure>
+<p><a href="https://store.steampowered.com/app/753640/Outer_Wilds/"><em>Outer Wilds</em></a> is a curiosity-driven space exploration game. According to <a href="https://en.wikipedia.org/wiki/Outer_Wilds">Wikipedia</a>, &quot;The game was listed as one of the best games of 2019 by several publications, and Edge, Polygon and Paste also featured it on their 'best games of the decade' lists.&quot; Not only is it a great game but I think it contains insights about how to design learning experiences. <em>Outer Wilds</em> pursued some very interesting design goals. It offers an environment that:</p>
+<ul>
+<li>Evokes the player's curiosity. Gets them to ask and pursue their own questions. Gets them to formulate their own objectives. Never explicitly tells the player what to do.</li>
+<li>Rewards the player solely with knowledge. It is completely absent of any extrinsic rewards.</li>
+<li>Fosters the player's growth mindset through experiences and role models.</li>
+</ul>
+<p>First, I'll give a brief description of the game's premise and then we'll analyze the game from the perspective of designing learning experiences.</p>
+<p>In <em>Outer Wilds</em>, you play as a member of an alien species who has just joined Outer Wilds Ventures, a small space program of solo explorers that are searching for answers in their solar system. You get your own tiny ship and you're off to explore whatever attracts your interest. The solar system and its handful of planets are relatively small so you explore it all over the course of the 20 or so hours it takes to complete the game. It only takes a minute or two to travel across the whole solar system.</p>
+<p>Playing the game feels something like this. You land on a planet, you begin exploring it, and you spot something interesting. You learn a little bit from this interesting thing and it leaves you a clue for where to learn more, often on another planet. Through pursuing the clue, you acquire a little bit more knowledge and another clue of where to learn even more. Through continuing this cycle of intentional exploration, you end up discovering answers to the game's major narrative questions.</p>
+<p>Next we'll look in detail at a number of ways in which <em>Outer Wilds</em> is interesting from the perspective of designing learning experiences:</p>
+<ul>
+<li><a href="#no-extrinsic-rewards">No extrinsic rewards</a>. Curiosity is the player's sole motivation, knowledge the sole reward.</li>
+<li><a href="#experiential-growth-mindset">Experiential growth mindset</a>. Communicating the perspective of failure as progress without the use of any explicit instructions.</li>
+<li><a href="#emphasis-on-player-autonomy">Emphasis on player autonomy</a>. Evoking the player's curiosity and getting them to ask their own questions. Never explicitly telling them what to do.</li>
+<li><a href="#architecting-for-curiosity">Architecting for the piquing of curiosity and the pursuit of knowledge</a>. High level design techniques for evoking the player's curiosity and providing clues for them to pursue it.</li>
+<li><a href="#ship-log">Ship log: a map of the player's knowledge</a>. Helping the player to remember what they've learned so far and what they might want to explore next.</li>
+</ul>
+<h2 id="no-extrinsic-rewards">No extrinsic rewards</h2>
+<p>Here are some rough definitions of <em>intrinsic reward</em> and <em>extrinsic reward</em>:</p>
+<ul>
+<li><em>Intrinsic reward</em>: The activity itself is its own reward. Example: I read books just because I enjoy the process of reading books.</li>
+<li><em>Extrinsic reward</em>: The reward for the activity is some external thing. Example: I read books because I receive money for each book I finish.</li>
+</ul>
+<p><em>Outer Wilds</em> is an experiment in how to motivate the player entirely through curiosity and to reward them solely with knowledge. The game doesn't have any <em>extrinsic rewards</em> for the player like badges, points, collected items, improved player stats, or even progress in the game world that persists across play sessions. When playing the game, the only lasting impact is the player's increased knowledge about the game world. One way to look at it is that the player doesn't change <em>Outer Wilds</em>, <em>Outer Wilds</em> changes the player.</p>
+<p>Evidence of this design is that if I started <em>Outer Wilds</em> from the beginning now, I could beat it within 30 minutes. I'm only able to beat it so quickly because I've acquired the relevant knowledge about the game by spending a couple of dozen hours playing it.</p>
+<p>From the perspective of designing learning experiences, I find this very interesting for a couple of reasons:</p>
+<ul>
+<li>I think some of the best learning experiences are driven by curiosity and rewarded by knowledge which is precisely the kind of experience design that is explored by <em>Outer Wilds</em>.</li>
+<li>Self-determination theory has found evidence that <em>extrinsic rewards</em> hurt intrinsic motivation<sup id="fnref-1"><a class="footnote-ref" href="#fn-1">1</a></sup>. To illustrate what this means, let's revisit the example about reading books:
+<ul>
+<li>January. Suppose Eva reads books purely because she enjoys the books themselves — there's no <em>extrinsic reward</em> involved.</li>
+<li>February. Eva's parents want to encourage the reading habit so, for the month of February, they reward her with $10 for every book she completes — they've introduced an <em>extrinsic reward</em>.</li>
+<li>March. Eva stops receiving money for reading. According to the findings of self-determination theory, the <em>extrinsic reward</em> harmed Eva's intrinsic interest in reading. Consequently, she is less interested in reading and reads less than she did in January, back when she had never received an <em>extrinsic reward</em> for reading and read just for the fun of it.</li>
+</ul>
+</li>
+</ul>
+<p><em>Outer Wilds</em> serves as an example of how to design an experience where players are motivated without <em>extrinsic rewards</em>. Such designs avoid the potential side effect of hurting the player's intrinsic enjoyment of the activity itself.</p>
+<h2 id="-experiential-growth-mindsetgrowth-mindset"><a id="experiential-growth-mindset"></a> Experiential growth mindset<sup id="fnref-2"><a class="footnote-ref" href="#fn-2">2</a></sup></h2>
+<p>Here are some rough definitions of <em>fixed mindset</em> and <em>growth mindset</em>:</p>
+<ul>
+<li><em>Fixed mindset</em>: When you have a <em>fixed mindset</em> about something, you believe that you cannot get better at it. Example: You believe that you are &quot;not a math person&quot;, you cannot get better at math, and so you don't bother trying to get better at math. Mistakes are very upsetting.</li>
+<li><em>Growth mindset</em>: When you have a <em>growth mindset</em> about something, you believe that you can get meaningfully better at something by working at it over time. Example: You see that you are currently not very good at math but believe that, by practicing, you can get much better at it over time. Mistakes serve as clues as to how you could improve.</li>
+</ul>
+<p>When I first heard of these ideas, I didn't find them to be very interesting. I thought: &quot;Aren't these ideas obvious? Of course I have a <em>growth mindset</em>! I believe I can get better at whatever I set my mind to! I don't need to spend any more time thinking about these terms.&quot;</p>
+<p>Several years later, I happened to encounter these terms again and noticed their connection to some of my own thinking and experiences. I realized that I had much to gain from more deeply internalizing the idea of a <em>growth mindset</em>.  For one thing, my previous attitude showed that I had a <em>fixed mindset</em> about my <em>growth mindset</em>!</p>
+<p>Here's one example to illustrate. When I give a presentation at work and ask for feedback on how it could have been better, the emotional part of my brain could certainly use improvement in the <em>growth mindset</em> department. The emotional part of my brain hopes that everybody says my presentation was perfect and it gets upset by any critical feedback it hears. Intellectually, I want this feedback because I know it'll help me to improve but that does little to comfort the emotional part of my brain. If the emotional part of my brain had more of a <em>growth mindset</em>, instead of getting upset by feedback, it'd get upset by the <em>absence</em> of feedback — &quot;I put all this time into making this presentation and I hardly grew at all because nobody gave me any advice on how I can improve!&quot; In the extreme, a <em>growth mindset</em> means obsessing over your rate of improvement.</p>
+<p>The process of learning with a <em>growth mindset</em> could be summarized as<sup id="fnref-3"><a class="footnote-ref" href="#fn-3">3</a></sup>:</p>
+<ul>
+<li><strong>Do.</strong> Make an attempt at something.</li>
+<li><strong>Fail.</strong> Observe the mistakes you made.</li>
+<li><strong>Learn.</strong> Use the mistakes as clues as to improvements you can make for your next attempt.</li>
+</ul>
+<p><em>Outer Wilds</em> provides players with an interesting way to develop a <em>growth mindset</em>. It doesn't include any instruction about <em>growth mindset</em> or explicitly mention it in any text in the game. I haven't even seen the game designers mention the phrase &quot;growth mindset&quot; in any of their talks or written documents! Yet the game gives players the opportunity to develop a growth mindset through their <em>experiences</em> and through observing it in <em>role models</em>:</p>
+<ul>
+<li><em>Experiences.</em> When you're playing <em>Outer Wilds</em> and you die, you can think of that as <em>failing</em>. <em>Outer Wilds</em> makes failing very cheap. The penalty for dying is virtually zero — you merely return to your spawn point. The benefit of dying is that you may have learned something new about the game world. In sum, failing has an upside and virtually no downside. So the first things <em>Outer Wilds</em> does to facilitate a <em>growth mindset</em> are making failing cheap and even rewarding it. Another thing <em>Outer Wilds</em> does is it makes dying essentially necessary for acquiring certain knowledge. For example, the way that I learned that my character, a member of the Hearthian alien species, needs to wear a spacesuit in order to go into space was by going into space without a spacesuit and dying! There are less obvious lessons that also require dying that I won't list here to avoid spoiling the game.</li>
+<li><em>Role models.</em> Throughout the game, the player encounters the writings of the Nomai, an advanced alien species that regularly mentions their scientific experiments in their writings. <a href="https://youtu.be/QaGu9tGCNbI?si=sfWYI5h5wxMbXJ34&amp;t=2725">Kelsey Beachum's talk</a> mentions that the Nomai have a cultural attitude that failure is progress and that this attitude comes through in their writings. I think this is a neat idea — helping the player to develop a <em>growth mindset</em> by surrounding them with a culture where a <em>growth mindset</em> is the norm. Observing these role models may help the player to internalize a <em>growth mindset</em>.</li>
+</ul>
+<h2 id="emphasis-on-player-autonomyautonomy"><a id="emphasis-on-player-autonomy"></a>Emphasis on player autonomy<sup id="fnref-4"><a class="footnote-ref" href="#fn-4">4</a></sup></h2>
+<p>A rough definition of <em>autonomy</em> is that it is about having the opportunity to make decisions for yourself. <em>Autonomous</em> and <em>controlled</em> are at opposite ends of the same spectrum. It's a subtle topic. I'll share a few points to give a taste of what <em>autonomy</em> means:</p>
+<ul>
+<li>
+<p>Blind compliance and blind defiance are not <em>autonomous</em> behaviors:</p>
+<ul>
+<li>Blind compliance: you do something primarily because somebody tells you to do it.</li>
+<li>Blind defiance: somebody requests that you do something and you do the opposite primarily because you feel like rebelling.</li>
+</ul>
+<p>To be <em>autonomous</em>, you have to decide for yourself what you want to do. You need to consider your options, consider the consequences, and then take your action.</p>
+</li>
+<li>
+<p>Being <em>autonomous</em> does not mean that you cannot seek assistance from others.</p>
+</li>
+</ul>
+<p>I find designing for <em>autonomy</em> to be very interesting because self-determination theory has found its presence to be important for a person's motivation.<sup id="fnref-5"><a class="footnote-ref" href="#fn-5">5</a></sup></p>
+<p><em>Outer Wilds</em> is very much an exploration in how to design for player <em>autonomy</em>.</p>
+<p><strong>The game never explicitly assigns the player any objectives.</strong> Instead, the game world is filled with things that are designed to pique the player's curiosity<sup id="fnref-6"><a class="footnote-ref" href="#fn-6">6</a></sup> and to provide the player with the opportunity to make discoveries through pursuing that curiosity. It's entirely up to the player to decide what they find interesting and then to pursue it.</p>
+<p>More concretely, piquing the player's curiosity can be viewed as <strong>getting the player to ask their own questions</strong> and then embark on finding answers to those questions. Here are some examples (<strong>SPOILER ALERT:</strong> don't read this bulleted list if you'd like to avoid some minor spoilers):</p>
+<ul>
+<li>The player lands on a planet, sees a building that they've never visited, and asks themselves &quot;what's inside that building?&quot; It's a simple technique but it was effective at piquing my curiosity. We could call it <strong>seeing a distant object</strong>.</li>
+<li>As the player explores the planets, they find writings about people's experiences visiting the Quantum Moon. The player has never been to the Quantum Moon and doesn't even know how to get there. The more Quantum Moon references they encounter, the more they want to visit. They ask themselves: &quot;How do I get to the Quantum Moon? What will I find when I get there?&quot; We could call this technique <strong>hearing about a distant object</strong>.</li>
+<li>The player encounters three computer screens side-by-side. One screen has a disc in it and is displaying some text. The other two screens are blank and have empty disc drives. The idea is to get the player to wonder and ask themselves: &quot;how do I get the other two computer screens to display their messages?&quot; We could call this technique <strong>instances that don't match a pattern</strong>.<sup id="fnref-7"><a class="footnote-ref" href="#fn-7">7</a></sup></li>
+<li>The player encounters an old note from an engineer that says they weren't able to get the probe cannon to launch. Then the player encounters a nearby computer screen that says that the probe cannon launched successfully. The intention is to get the player to ask themselves: &quot;why do these pieces of information contradict each other?&quot; We could call this technique <strong>contradicting information</strong>.</li>
+</ul>
+<p><strong>The game has essentially zero required tasks.</strong> The only required task occurs at the beginning of the game where the player needs to talk to the museum curator to get the launch codes for their spaceship. Other than that, the game doesn't require anything of the player. With the launch codes in hand, the player can explore any part of the game world that they choose — the game is designed to be explorable in any order.</p>
+<p>Playtesting revealed that, after acquiring the launch codes, some players were uncomfortable with the lack of an explicitly assigned objective. They didn't want to launch into space without knowing their specific mission. The team solved this by <strong>holding the player's hand a little to get them used to the process of deciding on their own objectives</strong>. The solution was for the museum curator to ask the player, &quot;Tell me, what's your plan once you're in space?&quot; and the player can respond from one of these choices<sup id="fnref-8"><a class="footnote-ref" href="#fn-8">8</a></sup>:</p>
+<ul>
+<li>&quot;I'm going to learn more about the Nomai.&quot;</li>
+<li>&quot;I'll meet up with the other travelers.&quot;</li>
+<li>&quot;I want to go somewhere no one's gone before.&quot;</li>
+<li>&quot;I think I'll start with something small.&quot;</li>
+<li>&quot;I don't know.&quot;</li>
+<li>&quot;I'm gonna wing it!&quot;</li>
+</ul>
+<p>This solution supports the player's <em>autonomy</em> in that it <strong>asks the player what they want to do rather than telling them what to do</strong>. Although the player is not required to follow through on the choice they selected, the developers observed that players often do follow through. A benefit of the multiple choice response format is that it gives the player some ideas of what's possible in case their mind was blank in terms of what they should do next. I think this is a neat alternative to assigning the player an explicit objective. </p>
+<h2 id="architecting-for-the-piquing-of-curiosity-and-the-pursuit-of-knowledge"><a id="architecting-for-curiosity"></a>Architecting for the piquing of curiosity and the pursuit of knowledge</h2>
+<p><em>Outer Wilds</em> is designed to give the player the experience of <em>curiosity-driven exploration</em> which has this structure:</p>
+<ul>
+<li><strong>Evoke the player's curiosity and give them a clue as to how they can pursue it should that be of interest to them.</strong> The player becomes curious about something in the game and formulates their own question about it. This thing provides a clue as to how the player can go about answering their question. Importantly, at no point does the game explicitly assign the player something to do — the player decides for themselves that they want to investigate their question.</li>
+<li><strong>Intentional exploration.</strong> The player explores with the intention of answering their question. The player does not explore aimlessly.</li>
+<li><strong>Rewarded solely with knowledge.</strong> The player finally uncovers the answer to their question. Their sole reward is knowledge.</li>
+</ul>
+<p>To achieve this experience, the game was architected with a <strong>web of <em>Curiosities</em> and <em>Clues</em></strong>:</p>
+<ul>
+<li><em>Curiosity.</em> A special object that holds the answer to one of the game's major narrative questions. It is located in a hidden or hard-to-reach place so it requires several pieces of knowledge to access. It is linked with three <em>Clues</em> each of which is located on a different planet.</li>
+<li><em>Clue.</em> Tells the player about the existence of a <em>Curiosity</em> and conveys a piece of knowledge needed to access that <em>Curiosity</em>. It also contains hints about how to find the <em>Curiosity's</em> other <em>Clues</em>.</li>
+</ul>
+<p>That was the original design but it turned out to be messier in practice. Sometimes there's a <em>Clue</em> that points to a <em>Clue</em> that points to a <em>Curiosity</em>. In some cases, there are <em>Clues</em> that don't point to other <em>Clues</em>.</p>
+<p>The web of <em>Curiosities</em> and <em>Clues</em> teaches the player about the game world and points the player to more things they might want to explore. The player can revisit this information at anytime via the game's <a href="#ship-log-a-map-of-the-players-knowledge">ship log</a>.</p>
+<p>The fact that the conveyance of knowledge plays such a significant role in the game introduces an interesting design problem: <strong>how does the player know what information is relevant to making progress in the game and what information is ignorable?</strong> Here are some of the techniques the game uses to solve this:</p>
+<ul>
+<li><strong>Informational areas of the game have interesting features while all other areas are visually boring.</strong> For example, an informational area on a planet might contain some buildings the player can enter whereas an area without any information might be an expansive treeless grassy plain. When playing the game, the player gets the sense that they should explore the buildings and ignore the plain.</li>
+<li><strong>Every snippet of text in the game contains actionable knowledge.</strong> In other games, the player might encounter text that is just lore — it might convey story or set the atmosphere but it's irrelevant to making progress in the game. This is not the case in <em>Outer Wilds</em>: every snippet of text that the player encounters includes some tidbit that they can use.</li>
+</ul>
+<h2 id="ship-log-a-map-of-the-players-knowledge"><a id="ship-log"></a>Ship log: a map of the player's knowledge</h2>
+<p>The ship log is a 2D map that is an external representation of the player's knowledge. The map is populated as the player makes discoveries. Items that the player has explored are visually distinct from those that the player has heard about but has yet to explore. For example, unvisited items might be represented by a question mark. In this way, the ship log communicates both what the player has learned and what they might want to explore next.</p>
+<p>Below are some screenshots from shortly after I started a new game that describe the ship log in detail.</p>
+<figure>
+	<a href="./images/ship-log-map.png" target="_blank">
+		<img src="./images/ship-log-map.png" width="640" height="360">
+	</a>
+	<figcaption>
+		<b>Ship log showing the solar system.</b> Planets I've visited are in color. Planets I've encountered a clue about but have yet to visit are in gray scale. Planets I know nothing about are blank.
+	</figcaption>
+</figure>
+<figure>
+	<a href="./images/ship-log-rumors.png" target="_blank">
+		<img src="./images/ship-log-rumors.png" width="640" height="360">
+	</a>
+	<figcaption>
+		<b>Ship log showing its alternative rumors view.</b> Like the solar system view, this is showing the player's knowledge but it's oriented around <b>Curiosities</b>, <b>Clues</b>, and the connections between them. I've been to the "Village" so it is represented as a concrete photograph. I've discovered clues about the other items, such as the astronaut "Gabbro", but have yet to actually find them and so they are represented as question marks.
+	</figcaption>
+</figure>
+<figure>
+	<a href="./images/ship-log-rumors-clues.png" target="_blank">
+		<img src="./images/ship-log-rumors-clues.png" width="640" height="360">
+	</a>
+	<figcaption>
+		<b>Ship log inspecting the "Lunar Ruins".</b> Players can inspect any item in the ship log to see a summary of what they've discovered about it so far. The screenshot is showing what I've discovered about the "Lunar Ruins" which isn't much!
+	</figcaption>
+</figure>
+<p>As I played through the game, the ship log served several uses for me:</p>
+<ul>
+<li><strong>A record of what I know.</strong> As I was working on my latest goals, I could refer to the ship log to remind myself of things that I had already learned.</li>
+<li><strong>Clues about what I don't know.</strong> Whenever I wanted to choose a new thing to explore, I could look at the ship log and select from one of the blank spots on my map. It was also motivational: &quot;I want to go find out more about this unknown area!&quot;</li>
+<li><strong>A sense of progress.</strong> As my map was populated with more and more of the things I had discovered, I could look at my map and think: &quot;Wow, look at all the things I've discovered!&quot;</li>
+</ul>
+<p>It seems to me that this could be a neat tool to incorporate into the design of a learning experience. As mentioned above, it can serve as a reference, convey clues of what one might want to learn next, and convey a sense of progress. Here are some other neat attributes of a map of knowledge:</p>
+<ul>
+<li>It's a reference that grows with the learner. The map grows as the learner grows.</li>
+<li>If the learner is using the map throughout their learning journey, it seems plausible the learner would become intimately familiar with the map and its contents as though it was a close friend.</li>
+<li>Because the map starts off nearly empty and grows gradually, it's likely to be approachable to the learner. Compare this with the learner receiving a full map of what they're going to learn — there's so much new stuff on there that it's likely to be overwhelming!</li>
+<li>The unknowns on the map serve to evoke the learner's curiosity — &quot;I want to learn this! I want to learn that!&quot;</li>
+<li>The map conveys the big picture as well as the relationships between the concepts. </li>
+</ul>
+<h2 id="concluding-thoughts">Concluding thoughts</h2>
+<p>The back cover of <a href="https://www.goodreads.com/book/show/683539.Why_We_Do_What_We_Do">Why We Do What We Do by Edward Deci (1995)</a> says:</p>
+<blockquote>
+<p>Instead of asking, &quot;How can I motivate people?&quot; we should be asking, &quot;How can I create the conditions within which people will motivate themselves?&quot;</p>
+</blockquote>
+<p>It seems to me that this is exactly a question <em>Outer Wilds</em> explores through its design constraints of avoiding <em>extrinsic rewards</em> and explicitly assigned objectives.</p>
+<p>If you're interested in designing learning experiences that prioritize intrinsic rewards, curiosity, knowledge, the learner asking and pursuing their own questions, autonomy, and a growth mindset then <em>Outer Wilds</em> seems like a potentially fruitful case study.</p>
+<h2 id="external-links">External links</h2>
+<p>Alex Beachum created the initial version of <em>Outer Wilds</em> as a part of his USC Interactive Media &amp; Games Division master's thesis:</p>
+<ul>
+<li>📕 <a href="https://digitallibrary.usc.edu/asset-management/2A3BF163YX5A">Outer Wilds: A Game of Curiosity-Driven Space Exploration by Alex Beachum (2013)</a>. Alex's master's thesis (30 pages).</li>
+</ul>
+<p>Later, Alex and a team of people invested several more years of work into <em>Outer Wilds</em> turning it into a production-quality award-winning game:</p>
+<ul>
+<li>🎮 <a href="https://store.steampowered.com/app/753640/Outer_Wilds/">Outer Wilds (2019)</a>. The game.</li>
+</ul>
+<p>Here are some resources that give insight into the design of <em>Outer Wilds</em> and the process of its creation:</p>
+<ul>
+<li>🎥 <a href="https://youtu.be/vGnce1Dp9BU">Designing for Curiosity in Outer Wilds by Alex Beachum (2019)</a>. Talk by Alex who is the Director of <em>Outer Wilds</em> and worked on its design and narrative.</li>
+<li>🎥 <a href="https://youtu.be/QaGu9tGCNbI">Sparking Curiosity-Driven Exploration Through Narrative in 'Outer Wilds' by Kelsey Beachum (2021)</a>. Talk by Kelsey who worked as a key narrative designer on <em>Outer Wilds</em>.</li>
+<li>🎥 <a href="https://youtu.be/LbY0mBXKKT0">The Making of Outer Wilds by Noclip (2020)</a>. Documentary about the making of <em>Outer Wilds</em>.</li>
+</ul>
+<h2 id="reach-out">Reach out</h2>
+<p>If you have any questions or are interested in anything you read here, feel free to leave a comment or <a href="/learning-about-learning/about.html#contact">reach out to me directly</a>!</p>
+<div class="footnotes">
+<hr />
+<ol>
+<li id="fn-1">
+<p>The potential negative effects of <em>extrinsic rewards</em> is a subtle topic.</p>
+<p>On the one hand, my personal experiences are largely consistent with self-determination theory: my most fulfilling and long-lasting learning experiences have been driven by <em>intrinsic rewards</em> like curiosity and the pleasure of making things. Whereas when my learning has involved <em>extrinsic rewards</em> like grades, I tended to focus on the reward at the expense of the learning. My dedication to the topic lasted only until I received my final letter grade.</p>
+<p>On the other hand, I'm not sure what to make of the research. There was a back and forth debate between two researchers in the field, Deci and Cameron. I like the following snippet from game developer <a href="https://en.wikipedia.org/wiki/Chris_Hecker">Chris Hecker</a>. It both articulates well my sense of confusion on the research and pulls a sensible conclusion out of it. The snippet is from over 10 years ago so I would have hoped that we would have gained some clarity since then but I'm not sure.</p>
+<blockquote>
+<p>To hack my way out of the thicket, I focused on the two results that both sides seem to begrudgingly agree are true.</p>
+<p>For interesting tasks,</p>
+<ol>
+<li>Tangible, expected, contingent rewards reduce free-choice intrinsic motivation, and</li>
+<li>Verbal, unexpected, informational feedback, increases free-choice and self-reported intrinsic motivation.</li>
+</ol>
+<p>[...]</p>
+<p>[T]he Flora paper heavily quotes the Cameron meta-analysis, which has been discredited by Deci, which was questioned by Cameron, which was responded to by Deci, and on and on. As I discuss in the slides, it's really hard to know who or what to believe. This is why I use the two conclusions above, because they are the only points on which Cameron and Deci seem to agree.</p>
+<p>— <a href="http://www.chrishecker.com/Achievements_Considered_Harmful%3F">Achievements Considered Harmful? - Chris Hecker's Website</a></p>
+</blockquote>
+<p>If anyone has any better ideas on what to make of the research, leave a comment or <a href="/learning-about-learning/about.html#contact">send me a message</a>.</p>
+<p>If you're interested in learning more about the potential negative effects of <em>extrinsic rewards</em>, here are some resources you can explore:</p>
+<ul>
+<li>📕 <a href="https://www.goodreads.com/book/show/683539.Why_We_Do_What_We_Do">Why We Do What We Do: Understanding Self-Motivation by Edward L. Deci (1995)</a></li>
+<li>📕 <a href="https://www.goodreads.com/book/show/541132.Punished_by_Rewards">Punished by Rewards: The Trouble with Gold Stars, Incentive Plans, A's, Praise and Other Bribes by Alfie Kohn (1993)</a></li>
+<li>📕 <a href="https://www.goodreads.com/book/show/6452796-drive">Drive: The Surprising Truth About What Motivates Us by Daniel H. Pink (2011)</a></li>
+<li>🎥 <a href="https://www.gdcvault.com/play/1012290/Achievements-Considered-Harmful">Achievements Considered Harmful? by Chris Hecker</a></li>
+</ul>
+<a href="#fnref-1" class="footnote-backref">&#8617;</a>
+</li>
+<li id="fn-2">
+<p>If you're interested in learning more about the concept of a <em>growth mindset</em>, see the book <a href="https://www.goodreads.com/book/show/40745.Mindset">Mindset: The New Psychology of Success by Carol Dweck (2006)</a>.</p>
+<a href="#fnref-2" class="footnote-backref">&#8617;</a>
+</li>
+<li id="fn-3">
+<p>The phrasing &quot;Do. Fail. Learn.&quot; is borrowed from <a href="https://www.goodreads.com/book/show/59696349-build">Build: An Unorthodox Guide to Making Things Worth Making by Tony Fadell (2022)</a></p>
+<a href="#fnref-3" class="footnote-backref">&#8617;</a>
+</li>
+<li id="fn-4">
+<p>If you're interested in learning more about the relevance of <em>autonomy</em>, <em>competence</em>, and <em>connectedness</em> to motivation, here are some resources you can explore:</p>
+<ul>
+<li>📕 <a href="https://www.goodreads.com/book/show/683539.Why_We_Do_What_We_Do">Why We Do What We Do: Understanding Self-Motivation by Edward L. Deci (1995)</a></li>
+<li>📕 <a href="https://www.goodreads.com/book/show/541132.Punished_by_Rewards">Punished by Rewards: The Trouble with Gold Stars, Incentive Plans, A's, Praise and Other Bribes by Alfie Kohn (1993)</a></li>
+<li>📕 <a href="https://www.goodreads.com/book/show/6452796-drive">Drive: The Surprising Truth About What Motivates Us by Daniel H. Pink (2011)</a></li>
+</ul>
+<a href="#fnref-4" class="footnote-backref">&#8617;</a>
+</li>
+<li id="fn-5">
+<p>To be more complete, self-determination theory has found the following factors to be key psychological human needs. The presence of these is important for a person's motivation:</p>
+<ul>
+<li><em>Autonomy.</em> The opportunity to make decisions for yourself.</li>
+<li><em>Competence.</em> The opportunity to improve your skills and knowledge.</li>
+<li><em>Connectedness.</em> The opportunity to connect with others that share your interests.</li>
+</ul>
+<a href="#fnref-5" class="footnote-backref">&#8617;</a>
+</li>
+<li id="fn-6">
+<p>The design of <em>Outer Wilds</em> attempting to pique the player's curiosity reminds me of the five Great Lessons from Montessori schools. These are stories about major historical developments: the origins of the universe, life, humans, numbers, and language. A primary purpose of the stories is to pique the curiosity of the children and inspire them to pursue the specific parts that interest them. For more details see <a href="https://www.goodreads.com/book/show/545764.Montessori">Montessori: The Science Behind the Genius by Angeline Lillard (2017)</a>.</p>
+<a href="#fnref-6" class="footnote-backref">&#8617;</a>
+</li>
+<li id="fn-7">
+<p>Here's an example of <em>instances that don't match a pattern</em> causing a physicist to ask and pursue an important question:</p>
+<blockquote>
+<p>James Maxwell discovered an important electromagnetic phenomenon essentially because a missing term broke a nice pattern in a set of equations.</p>
+<p>— <a href="https://www.goodreads.com/book/show/1752380.Changing_Minds">Changing Minds: Computers, Learning, and Literacy by Andre diSessa (2000)</a>, p. 17</p>
+</blockquote>
+<a href="#fnref-7" class="footnote-backref">&#8617;</a>
+</li>
+<li id="fn-8">
+<p>This design of <em>Outer Wilds</em> asking the player what they want to do and giving them a few choices reminds me of an aspect of the design of Montessori schools. Each day, each child selects from a small list of possible activities. This gives them a sense of autonomy without being overwhelming due to the list of options being too large. For more details see <a href="https://www.goodreads.com/book/show/545764.Montessori">Montessori: The Science Behind the Genius by Angeline Lillard (2017)</a>.</p>
+<a href="#fnref-8" class="footnote-backref">&#8617;</a>
+</li>
+</ol>
+</div>
+<a class="comments-link" href="https://github.com/rigdern/comments/issues/4">View Comments</a></div></div></div></body></html>
