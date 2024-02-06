@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html><head><title>Functional &amp; Structural Mental Models: Fast Application Versus Foundational Understanding - Learning About Learning</title><meta charset="UTF-8" /><meta content="width=device-width, initial-scale=1.0" name="viewport" /><style>html,
+body {
+  margin: 0;
+  padding: 0;
+}
+body {
+  font-family: "Computer Modern", Georgia, "Times New Roman", Times, serif;
+  font-size: 18px;
+}
+.content-and-sidenotes {
+  line-height: 1.45;
+}
+sup {
+  line-height: 0;
+}
+.footnotes li:target, sup:target {
+  background-color: #eaf3ff;
+}
+.title-background {
+  background-color: #0f52ba;
+  padding: 10px;
+  margin-bottom: 5px;
+  color: white;
+}
+.title {
+  display: flex;
+  max-width: 910px;
+  margin-left: auto;
+  margin-right: auto;
+}
+.title a {
+  text-decoration: none;
+  color: white;
+}
+.title a:hover {
+  text-decoration: underline;
+}
+.title-text {
+  display: block;
+  font-size: 20px;
+}
+.author-text {
+  box-sizing: border-box;
+  padding-left: 10px;
+  font-size: 15px;
+}
+.content-and-sidenotes {
+  position: relative;
+  max-width: 910px;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 10px;
+  padding-right: 10px;
+}
+.content {
+  max-width: 640px;
+}
+img, object {
+  max-width: 100%;
+  height: auto;
+}
+.sidenote {
+  position: absolute;
+  left: 660px;
+  width: 250px;
+  font-size: 15px;
+  color: rgb(153, 153, 153);
+}
+blockquote {
+  margin-left: 0;
+  margin-right: 0;
+  padding-left: 10px;
+  padding-right: 10px;
+  border-left: 5px solid rgb(208, 215, 222);
+  color: rgb(87, 96, 106);
+}
+figure {
+  margin-left: 0;
+  margin-right: 0;
+  margin-top: 1em;
+  margin-bottom: 1em;
+}
+figcaption {
+  color: rgb(128, 128, 128);
+  font-size: 0.9em;
+  margin-left: 10px;
+  margin-right: 10px;</style></head><body><div><div class="title-background"><div class="title"><div><a class="title-text" href="/a/learning-about-learning/index.html">Learning About Learning</a><div class="author-text">by <a href="/a/index.html">Adam Comella</a></div></div><div style="flex-grow: 1"></div><a href="/a/learning-about-learning/about.html" style="align-self: center">About</a></div></div><div class="content-and-sidenotes"><div class="content"><div style="margin-bottom: 24px;"><h1 style="margin-bottom: 0;">Functional &amp; Structural Mental Models</h1><h2 style="margin-top: 0;margin-bottom: 0;color: rgb(128, 128, 128);font-weight: normal;font-size: 1.2em;">Fast Application Versus Foundational Understanding</h2><div style="margin-top: 7px;font-size: 0.9em;color: rgb(128, 128, 128);font-style: italic;">Published: 2024-02-06</div><div style="padding-top: 7px;"><a href="https://github.com/rigdern/comments/issues/0"><img height="128" src="/a/resources/speech-bubble-light.png" style="height: 32px;width: auto;padding-right: 10px;" width="128" /></a><a href="/a/learning-about-learning/about.html#contact"><img height="128" src="/a/resources/envelope.png" style="height: 32px;width: auto;" width="128" /></a></div></div><style>
+	table {
+		border-collapse: collapse;
+	}
+
+	th, td {
+		border: 1px solid black;
+	}
+
+	.local-structural {
+		color: #00a816ff;
+	}
+	
+	.local-functional {
+		color: #0980e5ff;
+	}
+
+	.local-non-routine {
+		color: #d90000ff;
+	}
+
+	.local-advantage {
+		background-color: rgb(164, 247, 106);
+	}
+</style>
+<p>While reading the book <a href="https://www.goodreads.com/book/show/1752380.Changing_Minds">Changing Minds by Andrea diSessa (2000)</a>, I came across a very insightful way of categorizing different understandings one can have of a thing: <em>functional models</em> and <em>structural models</em>. I realized that some of my biggest learning epiphanies have come from discovering a <em>structural model</em> for understanding a thing.</p>
+<p>First I'll provide several examples of functional and structural models. After that concrete context is in place, I'll describe the models in general and how we can use them to improve our learning, teaching, and designs:</p>
+<ul>
+<li>Examples
+<ul>
+<li><a href="#microwave">Microwave</a></li>
+<li><a href="#multi-speed-bicycle">Multi-speed bicycle</a></li>
+<li><a href="#linked-list">Linked list</a></li>
+<li><a href="#git">Git</a></li>
+<li><a href="#notion">Notion &amp; Coda</a></li>
+</ul>
+</li>
+<li><a href="#characteristics">Characteristics of functional &amp; structural models</a></li>
+<li><a href="#implications">Implications</a></li>
+</ul>
+<h2 id="microwave">Microwave</h2>
+<p>One way to understand and use a microwave is in terms of the specific items it knows how to heat. My microwave includes buttons for heating popcorn, a potato, and pizza. A strength of this design is that if I want to heat one of these specific items, I know exactly what to do. If I want to heat popcorn, I hit the popcorn button. A weakness of this design is that if I want to heat something for which there is no button, I have no idea what to do. Which button do I use to heat a brownie? Should I use the popcorn button since they're both desserts? Or the potato button since they have somewhat similar shapes? I really have no idea.</p>
+<p>This design can be considered to be a <strong>functional model</strong>. The button labels are written in terms of the task I'm trying to accomplish. It's trivial to accomplish tasks that the design accounts for but it's completely non-obvious how to accomplish other tasks.</p>
+<p>Another way to understand and use a microwave is by controlling its time and power. A key concept is that the longer some food is in the microwave, the hotter it gets. I can use this understanding to heat any kind of food. If I want to heat a brownie, I put it in the microwave for one minute and then I inspect its temperature. If it's too cold, I put it in for another minute and then inspect it again. I repeat this heat and inspect cycle until the brownie is as hot as I'd like it to be.</p>
+<p>This design can be considered to be a <strong>structural model</strong>. The design is more focused on the mechanism of how the microwave works than on the specific task I'm trying to accomplish. Consequently, it takes more thought and more experimentation to heat food by controlling time than to heat food by pressing a food-specific button like popcorn. However, unlike with the food-specific buttons, I can use the time control and a little trial and error to heat any kind of food.</p>
+<p>When I learn a structural model, I feel like I obtain a much deeper understanding of the device and gain a much better intuition of what it's capable of. From the microwave's structural model, I understand that operating it involves controlling its time and power. That's all there is to it! With the functional model, I don't gain any insight deeper than pressing this button heats this kind of food. </p>
+<p>The structural model gives me a deeper understanding of the functional model. If I can find out how each food-specific button sets the microwave's time and power, then I can understand how heating popcorn compares to heating a potato.</p>
+<p>Now that I'm aware of this distinction between functional and structural models, when learning something new I'm often on the lookout for a structural model. The structural model gives me better intuition for the device's capabilities and increased confidence in using the device. It gives me clues of what to do for handling uncommon situations and recovering when something goes wrong.</p>
+<h2 id="multi-speed-bicycle">Multi-speed bicycle</h2>
+<p>This example of the design of a fictional bicycle is taken from <a href="https://www.goodreads.com/book/show/1752380.Changing_Minds">Changing Minds by Andrea diSessa (2000)</a>.</p>
+<p><strong>Functional model.</strong> Suppose the designer of a multi-speed bicycle heavily focused on function and labeled the gear settings in terms of the terrain they envisioned the rider encountering such as smooth pavement uphill, smooth pavement downhill, gravel, and crossing railroad tracks. This poses a problem in certain scenarios. What gear should the rider use if they're riding on gravel and the gravel gear doesn't feel right? What gear should the rider use if they encounter terrain that doesn't match the label of any of the gears? The functional model doesn't provide good answers to these questions because they lie outside the set of scenarios envisioned by the designer.</p>
+<p><strong>Structural model.</strong> An alternative interface for controlling the bicycle's gears would be to label each gear setting with a number. The mental model would be that the higher the gear setting, the greater the wheels turn for a given rotation of the pedals. With this model, the rider can find the right gear setting for any terrain through a little trial and error. If pedaling is too hard on the current terrain, they should decrease the gear setting. If pedaling is too easy on the current terrain, they should increase the gear setting. In this way, the rider can continually adjust the gear setting until they feel pedaling is the right difficulty.</p>
+<h2 id="linked-list">Linked list</h2>
+<p>A <strong>functional model</strong> would be understanding a linked list in terms of its API. Whenever I want to do something new with the linked list, I need to check the documentation to see if I can find a relevant API. If I can't find one, then I'll conclude that the linked list cannot perform the task.</p>
+<p>A <strong>structural model</strong> would be understanding a linked list in terms of how it stores its data: understanding that a linked list node just stores its value and a pointer to the next node. This knowledge and some thought provide good intuition for the linked list's capabilities. If I want to do something new with the linked list, I can think about how the linked list's data could be used to achieve it. Based on whether or not I can see a way, I can make a good guess about whether the linked list can accomplish this task without having to refer to the documentation.</p>
+<h2 id="git">Git</h2>
+<p>My first several years of using git were based on a <strong>functional model</strong>. I understood git primarily in terms of its commands. Git was intimidating. It was a massive tool with tons of commands and tons of options. I'd never have a good intuition of git's capabilities. Whenever I wanted to do something new with git, I searched the internet to find out how to do it. If I couldn't find a solution, I'd conclude that this wasn't something git could do.</p>
+<p>After years of using git this way, I read about git's internals to satisfy my curiosity. I didn't realize it at the time but learning about git's internals provided me with a <strong>structural model</strong> for understanding git. I learned that git had just a few core data types (blobs, trees, commits) and that all of git's capabilities could be understood in terms of operations on those data types. This gave me a great intuition for git's capabilities. If I wanted to do something new with git, I could think about what operations would need to be done on git's core data types. Based on this, I could conclude whether or not git seemed like a good fit for the task and predict whether or not git would have a command for the task.</p>
+<p>To my surprise, learning about git's internals helped me to become a much more capable user of git. I now realize that's because git's internals have provided me with a good structural model for git. When using git and running into non-routine situations or error scenarios, I now feel confident that I can figure out what to do by thinking in terms of the structural model.</p>
+<p>When thinking in terms of the functional model, git felt like a massive and intimidating set of somewhat disconnected commands. When thinking in terms of the structural model, git feels like an elegant set of just a few simple ideas.</p>
+<h2 id="notion--coda"><a id="notion"></a>Notion &amp; Coda</h2>
+<p>I first explored <a href="https://www.notion.so/">Notion</a> out of curiosity. My initial reaction was confusion about what it was. It seemed like some combination of a wiki, a collaborative note taking system (like Microsoft OneNote), and a task management system. If it's just like these existing tools, what advantages does it have?</p>
+<p>I looked at its templates and was overwhelmed by the number of things it could do. This made me even more confused about what exactly Notion was. Here's a sampling of things I see when looking at its list of templates today:</p>
+<ul>
+<li>To-do list</li>
+<li>Projects &amp; tasks</li>
+<li>Meetings</li>
+<li>Docs</li>
+<li>Wiki</li>
+<li>Product Spec</li>
+<li>Design Portfolio</li>
+<li>Pitch deck</li>
+<li>CRM Tracker</li>
+<li>Job board</li>
+<li>People Directory</li>
+<li>Org Chart</li>
+<li>1:1 Notes</li>
+<li>Journal</li>
+</ul>
+<p>I watched Notion's video, <a href="https://youtu.be/oTahLEX3NXo">What is Notion?</a>, which showed that Notion has capabilities including to do lists, kanban boards, calendars, and word processing.</p>
+<p>All this gave me the impression that Notion can do everything which doesn't give me a clear idea of its strengths and weaknesses.</p>
+<p>I started experimenting with Notion. When making a new page in Notion, I observed that I could pick from several different types:</p>
+<ul>
+<li>Page</li>
+<li>Table</li>
+<li>Board</li>
+<li>List</li>
+<li>Timeline</li>
+<li>Calendar</li>
+<li>Gallery</li>
+</ul>
+<p>This small list was more digestible than the big list of templates but I still felt confused about Notion's purpose. I played with Notion more, made no further progress in understanding its purpose, and moved on to other things.</p>
+<p>Months later, I was talking with a few people and one of them mentioned how much he liked Notion. Another person said they struggled to understand how to use Notion and asked if he could give a tutorial. The first person replied that Notion makes a lot more sense when you realize that everything is a database.</p>
+<p>After some discussion, I felt I finally understood what Notion was. The core primitives in Notion are databases, pages, and views. Everything else in Notion is built on top of these primitives. Suppose I create a database to keep track of video games that interest me. I might make database fields for the game's title, its release date, and my current status with the game (e.g. want to play it, playing it, finished it). Each database record in Notion also has a page associated with it where you can put as much rich text as you want: prose mixed with images, videos, etc. I might use this capability to store my notes about each game.</p>
+<p>Earlier, we saw some of the views that Notion supports (e.g. Table, Board, Calendar). Views enable you to see different representations of your database. I might create a Board view of my database so that I can see the video games divided into columns based on my current status with them: want to play, playing, finished. When I finish a game, I can drag it from the &quot;playing&quot; column to the &quot;finished&quot; column. I might also create a Calendar view so that I can see the games that are coming out soon displayed in a calendar format.</p>
+<p>The core primitives of databases, pages, and views represent a <strong>structural model</strong> for Notion. Everything else about Notion can be understood in terms of these.</p>
+<p>Looking back at my initial encounters with Notion, I had been trying to understand it in terms of <strong>functional models</strong>. Notion's templates focus intensely on function. Each is focused on one of the many scenarios that a user might want to accomplish. This is very helpful if I'm trying to accomplish a specific task and there's a template for it. It's not so helpful for understanding the essence of Notion — for building intuition of what it's capable of.</p>
+<p>The views are also not a good starting point for understanding the essence of Notion. Views such as the Board, Timeline, and Calendar seem like disconnected pieces of functionality.</p>
+<p>The database is the foundation that ties everything together. The views are just different ways of looking at your database. Each template is just a collection of databases, pages, and views that are preconfigured for a particular purpose like organizing a todo list or a directory of people.</p>
+<p><a href="https://coda.io/">Coda</a> is one of Notion's competitors. I have limited experience with it but I overheard somebody sharing similar advice: Coda makes a lot more sense when you realize that everything is a database.</p>
+<h2 id="characteristics-of-functional--structural-models"><a id="characteristics"></a>Characteristics of functional &amp; structural models</h2>
+<p>A <strong>functional model</strong> is focused on a task that a person might want to accomplish which means it takes minimal effort for a person to see how to accomplish their task using a functional model. This works great in routine situations — situations where the task is covered by a functional model. Whereas it's not at all obvious what to do when encountering a non-routine situation. Using a device requires a whole repertoire of functional models. They may feel like a bunch of somewhat disconnected ideas. This facilitates incremental learning in that a person can learn one functional model at a time.</p>
+<p>A <strong>structural model</strong> is a compact set of tightly interconnected ideas. It is comprehensive in that you can use it to figure out how to do anything you want with the device. This means that even when you encounter a non-routine situation, you have a starting point for figuring out how to accomplish it.</p>
+<p>Instead of focusing on a user's task, a structural model is more likely to be a description of a mechanism. Consequently, it takes some thinking to figure out how to use it to accomplish any task. The mechanism description doesn't necessarily represent how the device actually works — it just needs to be useful.</p>
+<p>In my experience, a structural model can feel like an elegant set of just a few simple ideas. It brings a lens that unifies the many functional models that previously felt somewhat disconnected. It gives a better intuition of the device's essence and what it's capable of.</p>
+<p>In summary, functional models make accomplishing routine tasks fast whereas structural models make accomplishing novel tasks possible.</p>
+<p>Here's a table summarizing some of the trade-offs between functional and structural models:</p>
+<h3 id="table-time-to-figure-out-how-to-accomplish-a-task">Table: Time to figure out how to accomplish a task</h3>
+<table cellpadding="5">
+	<thead>
+		<tr>
+			<th>Task Type</th>
+			<th>Functional Model</th>
+			<th>Structural Model</th>
+		</tr>
+	</thead>
+<tbody>
+	<tr>
+		<td>Routine</td>
+		<td class="local-advantage">Short/quick</td><td>Long</td>
+	</tr>
+	<tr>
+		<td>Non-routine</td>
+		<td>Potentially not possible</td>
+		<td class="local-advantage">Long</td>
+	</tr>
+	</tbody>
+</table>
+<p>(the <span class="local-advantage">green cells</span> represent an advantage compared to the other model)</p>
+<p>Here's a visualization showing some of the properties of functional and structural models:</p>
+<figure>
+	<a href="./images/tree.svg" target="_blank" style="display: block">
+		<object
+			type="image/svg+xml"
+			data="./images/tree.svg"
+			width="640"
+			height="437.14"
+			style="pointer-events: none; border: 1px solid lightgrey; padding: 10px;">
+			Your browser does not support SVG
+		</object>
+	</a>
+	<figcaption>
+		<b>Tree visualization of functional and structural models.</b> The <span class="local-structural">structural model</span> is the tree's trunk. The many <span class="local-functional">functional models</span>, which can be derived from the <span class="local-structural">structural model</span>, are the tree's branches.
+	</figcaption>
+</figure>
+<p>Here are the functional and structural models from the <a href="#microwave">microwave example</a> presented using the same kind of visualization:</p>
+<figure>
+	<a href="./images/microwave.svg" target="_blank" style="display: block">
+		<object
+			type="image/svg+xml"
+			data="./images/microwave.svg"
+			width="640"
+			height="561"
+			style="pointer-events: none; border: 1px solid lightgrey; padding: 10px;">
+			Your browser does not support SVG
+		</object>
+	</a>
+	<figcaption>
+		<b>Microwave's models.</b> The <span class="local-structural">structural model</span> consists of an understanding of how increased <span class="local-structural">time</span> and <span class="local-structural">power</span> affect the food's temperature. The <span class="local-functional">functional models</span>, each of which is presented as a button on the microwave, consist of heating a <span class="local-functional">potato</span>, <span class="local-functional">popcorn</span>, and <span class="local-functional">pizza</span>. There is no button for heating a <span class="local-non-routine">brownie</span> and therefore it isn't covered by any of the <span class="local-functional">functional models</span>. But one can figure out how to heat it by thinking in terms of the <span class="local-structural">structural model</span>: by specifying the microwave's <span class="local-structural">time</span> and <span class="local-structural">power</span>.
+	</figcaption>
+</figure>
+<h2 id="implications">Implications</h2>
+<p>How can we use this awareness of functional and structural models to improve our designs, learning, and teaching?</p>
+<p>Designers can try to come up with simple structural models for their devices and build functional models on top of them. Perhaps the designer will be lucky enough to find a design where the structural and functional models are equivalent or only have a small gap between them. That way, not only can the user leverage the structural model to accomplish any task but it's also quick to figure out how to accomplish the tasks using this model.</p>
+<p>Learners and teachers should probably begin with functional models. They can be learned incrementally — one at a time — and enable the learner to directly accomplish the tasks they care about. Later, the learner can work on acquiring a structural model which will bring them to a new level of competence. It'll enable them to handle non-routine situations that aren't covered by the functional models.</p>
+<p>Functional and structural models apply not just to devices but to knowledge in general. Here's an observation about learning physics:</p>
+<blockquote>
+<p>In the beginning it always seems as if I had to memorize thousands of new facts, concepts and ideas. But this is an illusion. There are always just a few core principle that govern the field and thus my first job is to identify them.</p>
+<p>From <a href="https://www.goodreads.com/book/show/51470009-teach-yourself-physics">Teach Yourself Physics by Jakob Schwichtenberg (2020)</a>, p. 196</p>
+</blockquote>
+<h2 id="external-links">External links</h2>
+<ul>
+<li>📕 <a href="https://www.goodreads.com/book/show/1752380.Changing_Minds">Changing Minds by Andrea diSessa (2000)</a>. I initially learned of structural and functional models from this book.</li>
+<li>📄 <em>Models of Computation</em> by Andrea diSessa. Chapter 10 of <a href="https://www.goodreads.com/book/show/16869.User_Centered_System_Design">User Centered System Design (1986)</a>. Provides additional details about structural and functional models.</li>
+<li>📄 <a href="https://dl.acm.org/doi/abs/10.1145/800045.801613">Mental Models and Problem Solving in Using a Calculator by Halasz &amp; Moran (1983)</a>. Compares the performance of calculator users who were given a structural model with those who were not. The users who were taught a structural model spent more time on each calculator operation they entered but completed non-routine calculator problems more quickly. In other words, the users who didn't have a structural model required more calculator operations to complete the non-routine problems.</li>
+</ul>
+<h2 id="reach-out">Reach out</h2>
+<p>Do you have any examples of structural models that you've found to be helpful? Do you know of ideas that seem similar to the concepts of functional and structural models? I'd be interested to hear about these.</p>
+<p>If you have any questions or are interested in anything you read here, feel free to <a href="https://github.com/rigdern/comments/issues/4">leave a comment</a> or <a href="/a/learning-about-learning/about.html#contact">reach out to me directly</a>!</p>
+<a href="https://github.com/rigdern/comments/issues/0" style="background-color: #0f52ba;color: white;text-decoration: none;display: inline-block;padding: 10px 16px;border-radius: 16px;margin-top: 30px;"><img height="128" src="/a/resources/speech-bubble-dark.png" style="height: 18px;width: auto;padding-right: 5px;position: relative;top: 3px;" width="128" />View Comments</a></div></div><div style="background-color: rgb(230, 230, 230);"><div style="display: flex;margin-top: 30px;padding: 10px;font-size: 0.8em;margin-left: auto;margin-right: auto;max-width: 910px;"><div style="flex-shrink: 0;">Subscribe via <a href="/a/learning-about-learning/rss.xml">RSS</a></div><div style="flex-grow: 1;flex-shrink: 1;min-width: 20px;max-width: 50px;"></div><ul style="flex-shrink: 0;list-style-type: none;padding: 0;margin: 0;"><li style="padding-bottom: 5px;"><span style="display: inline-block;width: 16px;margin-right: 5px;">@</span>adamhcomella &apos;at&apos; gmail.com</li><li style="padding-bottom: 5px;"><a href="https://x.com/rigdern" target="_blank"><img height="1227" src="/a/learning-about-learning/resources/x-logo.svg" style="width: 16px;height: auto;margin-right: 5px;position: relative;top: 3px;" width="1200" />rigdern</a></li><li style="padding-bottom: 5px;"><a href="https://github.com/rigdern" target="_blank"><img height="96" src="/a/learning-about-learning/resources/github-logo.svg" style="width: 16px;height: auto;margin-right: 5px;position: relative;top: 2px;" width="98" />rigdern</a></li></ul></div></div></div></body></html>
